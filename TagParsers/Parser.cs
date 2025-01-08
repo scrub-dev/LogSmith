@@ -11,33 +11,29 @@ namespace logsmith.TagParsers
 {
     public class Parser
     {
-        public static readonly string TagRegexString = @"{{\s*((?<tag>[a-z]*?)(?: (?<format>[a-z\-\|\(\)\,]*?))?)\s*}}";
-        public static readonly Regex TagRegex = new(TagRegexString, RegexOptions.IgnoreCase);
+        public static readonly string TagRegexString = @"{{\s*((?<tag>[a-z]*?)(?: (?<format>[0-9a-z\-\|\(\)\,\: ]*?))?)\s*}}";
 
-
-        public static readonly  Dictionary<string, ITagParser> parsers = new() { 
+        public static readonly  Dictionary<string, ITagParser> Parsers = new() { 
             { DateTagParser.Tag, new DateTagParser() },
             { LogLevelParser.Tag, new LogLevelParser() }
         };
 
         public static void ParseTemplateString(ref string templateString)
         {
-            
-            foreach (Match m in Regex.Matches(templateString, TagRegexString).Cast<Match>())
+            while (Regex.IsMatch(templateString, TagRegexString, RegexOptions.IgnoreCase))
             {
-                // get match index 
-                // get match length
-                // generate parsed tag from match
-                // remove match index + length
-                // splice generated parsed tag.
-                Trace.WriteLine(string.Format("Found '{0}' at position {1} with length {2}", m.Value, m.Index, m.Value.Length));
-                Trace.WriteLine(string.Format("Tag : {0} | Format : {1}", m.Groups["tag"], m.Groups["format"]));
+                Match m = Regex.Match(templateString, TagRegexString, RegexOptions.IgnoreCase);
+                (string parsedString, bool success) = ParseTag(m.Groups["tag"].Value, m.Groups["format"].Value);
+                if (success)
+                {
+                    templateString = templateString.Remove(m.Index, m.Value.Length).Insert(m.Index, parsedString);
+                }
             }
         }
 
         public static (string parsedString, bool success) ParseTag(string capturedTagName, string capturedTagParameters)
         {
-            if (!parsers.TryGetValue(capturedTagName, out ITagParser? parser)) throw new Exception("Tag Parser not found"); // TODO : Set a UI Error instead.
+            if (!Parsers.TryGetValue(capturedTagName, out ITagParser? parser)) throw new Exception("Tag Parser not found"); // TODO : Set a UI Error instead.
             return parser.Parse(capturedTagParameters ?? string.Empty);
         }
     }

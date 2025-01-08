@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("logsmith")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1d153a15c2fea80db84a11a75955db8c4f3017b3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f0b07c29dbe9927dc22bd513ad56b900705a1d55")]
 [assembly: System.Reflection.AssemblyProductAttribute("logsmith")]
 [assembly: System.Reflection.AssemblyTitleAttribute("logsmith")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
