@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using logsmith.TagParsers;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -18,7 +19,14 @@ namespace logsmith
     {
         public MainWindow()
         {
+            string temp = "{{date yyyy-mm-dd}} - {{loglevel}}";
+
+            Parser.ParseTemplateString(ref temp);
+
+            Console.WriteLine(temp);
+
             InitializeComponent();
+
         }
     }
 }
