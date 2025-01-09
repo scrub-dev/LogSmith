@@ -28,10 +28,10 @@ namespace logsmith.TagParsers
                     output = string.Join(" ", new ArraySegment<string>(textArray, 0, int.Parse(parameterString)));
                     break;
                 case ParameterType.NUMBER_RANGE:
-                    output = string.Join(" ", new ArraySegment<string>(textArray, 0, GetNumBetweenRange(parameterString)));
+                    output = string.Join(" ", new ArraySegment<string>(textArray, 0, GetNumBetweenRange(parameterString, textArray.Length + 1)));
                     break;
                 case ParameterType.BLANK:
-                    output = string.Join(" ", new ArraySegment<string>(textArray, 0, textArray.Length + 1));
+                    output = string.Join(" ", new ArraySegment<string>(textArray, 0, new Random().Next(textArray.Length + 1)));
                     break;
             }
             return (output, true);
@@ -44,7 +44,7 @@ namespace logsmith.TagParsers
             if (parameterString.Length > 0) return ParameterType.NUMBER;
             return ParameterType.BLANK;
         }
-        private static int GetNumBetweenRange(string parameterString)
+        private static int GetNumBetweenRange(string parameterString, int maxPossibleLength)
         {
             Match m = Regex.Match(parameterString, RangeRegex);
             int _a = int.Parse(m.Groups["num1"].Value);
@@ -52,8 +52,9 @@ namespace logsmith.TagParsers
 
             int a = Math.Min(_a, _b);
             int b = Math.Max(_a, _b);
+            int c = Math.Max(b, maxPossibleLength);
 
-            return new Random().Next(a,b);
+            return new Random().Next(a,c);
         }
     }
 }
