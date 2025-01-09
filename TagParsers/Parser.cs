@@ -15,7 +15,9 @@ namespace logsmith.TagParsers
 
         public static readonly  Dictionary<string, ITagParser> Parsers = new() { 
             { DateTagParser.Tag, new DateTagParser() },
-            { LogLevelParser.Tag, new LogLevelParser() }
+            { LogLevelParser.Tag, new LogLevelParser() },
+            { LoremIpsumParser.Tag, new LoremIpsumParser() }
+
         };
 
         public static void ParseTemplateString(ref string templateString)
@@ -33,7 +35,7 @@ namespace logsmith.TagParsers
 
         public static (string parsedString, bool success) ParseTag(string capturedTagName, string capturedTagParameters)
         {
-            if (!Parsers.TryGetValue(capturedTagName, out ITagParser? parser)) throw new Exception("Tag Parser not found"); // TODO : Set a UI Error instead.
+            if (!Parsers.TryGetValue(capturedTagName, out ITagParser? parser)) return (string.Empty, false);
             return parser.Parse(capturedTagParameters ?? string.Empty);
         }
     }
