@@ -20,7 +20,7 @@ namespace logsmith
     {
         public MainWindow()
         {
-            string temp = "[{{date HH:mm:ss}}] - {{loglevel (WARN:20,INFO:80)}} {{loremipsum (2,8)}}";
+            string temp = "[{{date HH:mm:ss}}] - {{loglevel (WARN:20,INFO:80)}} {{loremipsum (2,8)}} | {{loremipsum 1}} | {{loremipsum}}";
 
             Parser.ParseTemplateString(ref temp);
 

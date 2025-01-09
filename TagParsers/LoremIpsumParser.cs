@@ -52,7 +52,7 @@ namespace logsmith.TagParsers
 
             int a = Math.Min(_a, _b);
             int b = Math.Max(_a, _b);
-            int c = Math.Max(b, maxPossibleLength);
+            int c = Math.Min(b, maxPossibleLength);
 
             return new Random().Next(a,c);
         }
