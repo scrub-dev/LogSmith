@@ -10,5 +10,20 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Styles\colour.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Components\buttons.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Components\components.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\font.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\styles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 </Project>

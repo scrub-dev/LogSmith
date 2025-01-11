@@ -8,7 +8,7 @@ namespace logsmith.TagParsers
 {
     public interface ITagParser
     {
-        public static string? Tag
+        public static string Tag
         {
             get;
         }

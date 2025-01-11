@@ -18,22 +18,12 @@ namespace logsmith
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow() => InitializeComponent();
+        private void BtnMinimise_Click(object sender, RoutedEventArgs e) => WindowState = WindowState.Minimized;
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
         {
-            string temp = "[{{date HH:mm:ss}}] - {{loglevel (WARN:20,INFO:80)}} {{loremipsum (2,8)}} ( {{loremipsum 1}} )";
-
-            Parser.ParseTemplateString(ref temp);
-
-            Trace.WriteLine(temp);
-
-            InitializeComponent();
-
+            base.OnMouseLeftButtonDown(e);
+            DragMove();
         }
     }
 }
-
-// Parser Ideas
-/*
- * number p=range (10,10000),max 999 etc.
- * 
- */
