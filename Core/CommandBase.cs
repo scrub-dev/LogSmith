@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace NowPlaying.Commands
+namespace logsmith.Core
 {
     public abstract class CommandBase : ICommand
     {

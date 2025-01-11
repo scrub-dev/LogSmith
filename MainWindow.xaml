@@ -20,6 +20,9 @@
                 <RowDefinition Height="8*"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
+            <DockPanel Grid.Row="1">
+                <ContentControl Content="{Binding CurrentView}" Panel.ZIndex="1"/>
+            </DockPanel>
             <Border Grid.Row="0"
                     Grid.Column="0" 
                     Grid.ColumnSpan="2" 
@@ -79,6 +82,25 @@
                     BorderThickness="0 2 0 0"
                     BorderBrush="{StaticResource main}"
                     >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                    <Border Grid.Column="1">
+                        <Border  Margin="0,10,0,10" CornerRadius="10" Background="{StaticResource background-light}">
+                            <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" Foreground="White" Padding="5,0,0,0" FontFamily="Cascadia Code" FontWeight="Light" Content="{Binding CurrentState}"/>
+                        </Border>
+                    </Border>
+
+                </Grid>
             </Border>
         </Grid>
     </Border>

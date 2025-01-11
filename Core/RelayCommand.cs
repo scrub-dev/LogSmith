@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace NowPlaying.Core
+namespace logsmith.Core
 {
     internal class RelayCommand(Action<object> execute, Func<object, bool>? canExecute = null) : ICommand
     {
