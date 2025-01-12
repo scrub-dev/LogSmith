@@ -15,12 +15,12 @@
     <SolidColorBrush x:Key="main-light" Color="{StaticResource colour-main-light}"/>
     <SolidColorBrush x:Key="main-dark" Color="{StaticResource colour-main-dark}"/>
 
-    <Color x:Key="colour-success-light">#DDF6A2</Color>
-    <Color x:Key="colour-success">#CFF27E</Color>
-    <Color x:Key="colour-success-dark">#B4EB33</Color>
-    <SolidColorBrush x:Key="success-light" Color="{StaticResource colour-main}"/>
+    <Color x:Key="colour-success-light">#00B8AE</Color>
+    <Color x:Key="colour-success">#006C67</Color>
+    <Color x:Key="colour-success-dark">#003D3A</Color>
+    <SolidColorBrush x:Key="success-light" Color="{StaticResource colour-success-light}"/>
     <SolidColorBrush x:Key="success" Color="{StaticResource colour-success}"/>
-    <SolidColorBrush x:Key="success-dark" Color="{StaticResource colour-main-dark}"/>
+    <SolidColorBrush x:Key="success-dark" Color="{StaticResource colour-success-dark}"/>
 
 
     <Color x:Key="colour-warning-light">#F4CE90</Color>
