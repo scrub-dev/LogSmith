@@ -59,7 +59,7 @@
                                 </Style>
                             </Button.Resources>
                             <Button.Content>
-                                <Image Width="20" Height="20" Source="/Images/cross.png"/>
+                                <Image Width="20" Height="20" Source="pack://application:,,,/Images/cross.png"/>
                             </Button.Content>
                         </Button>
                         <Button Width="30" Style="{StaticResource ButtonMinimise}"  Click="BtnMinimise_Click">
@@ -69,7 +69,7 @@
                                 </Style>
                             </Button.Resources>
                             <Button.Content>
-                                <Image Width="20" Height="20" Source="/Images/minimise.png"/>
+                                <Image Width="20" Height="20" Source="pack://application:,,,/Images/minimise.png"/>
                             </Button.Content>
                         </Button>
                     </StackPanel>
