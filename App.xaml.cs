@@ -47,7 +47,5 @@ namespace logsmith
             _host.Dispose();
             base.OnExit(e);
         }
-
     }
-
 }
