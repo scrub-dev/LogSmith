@@ -1,0 +1,44 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Styles/colour.xaml"/>
+        <ResourceDictionary Source="/Styles/font.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="textBoxLabelBase" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontWeight" Value="Light"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontFamily" Value="{StaticResource mainFont}"/>
+    </Style>
+    <Style x:Key="textBoxLabel--large" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource textBoxLabelBase}">
+        <Setter Property="Padding" Value="4"/>
+        <Setter Property="FontSize" Value="20"/>
+    </Style>
+    <Style x:Key="textBoxLabel" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource textBoxLabelBase}">
+        <Setter Property="Padding" Value="2,5,5,0"/>
+        <Setter Property="FontSize" Value="16"/>
+    </Style>
+
+    <Style x:Key="textBoxBase" TargetType="{x:Type TextBox}">
+        <Style.Setters>
+            <Setter Property="Margin" Value="0,0,0,0"/>
+            <Setter Property="FontWeight" Value="Light"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="{StaticResource background-light}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontFamily" Value="{StaticResource mainFont}"/>
+        </Style.Setters>
+    </Style>
+    <Style x:Key="textBox--large" TargetType="{x:Type TextBox}" BasedOn="{StaticResource textBoxBase}">
+        <Style.Setters>
+            <Setter Property="Padding" Value="8"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style.Setters>
+    </Style>
+    <Style x:Key="textBox" TargetType="{x:Type TextBox}" BasedOn="{StaticResource textBoxBase}">
+        <Style.Setters>
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style.Setters>
+    </Style>
+</ResourceDictionary>

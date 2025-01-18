@@ -2,5 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="buttons.xaml"/>
+        <ResourceDictionary Source="textbox.xaml"/>
+        <ResourceDictionary Source="combobox.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
