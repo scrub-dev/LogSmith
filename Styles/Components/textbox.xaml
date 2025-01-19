@@ -15,7 +15,6 @@
         <Setter Property="FontSize" Value="20"/>
     </Style>
     <Style x:Key="textBoxLabel" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource textBoxLabelBase}">
-        <Setter Property="Padding" Value="2,5,5,0"/>
         <Setter Property="FontSize" Value="16"/>
     </Style>
 

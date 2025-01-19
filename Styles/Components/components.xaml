@@ -5,4 +5,13 @@
         <ResourceDictionary Source="textbox.xaml"/>
         <ResourceDictionary Source="combobox.xaml"/>
     </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="section" TargetType="{x:Type Border}">
+        <Style.Setters>
+            <Setter Property="Background" Value="{StaticResource background}"/>
+            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="Margin" Value="0,5,0,0"/>
+            <Setter Property="Padding" Value="10"/>
+        </Style.Setters>
+    </Style>
 </ResourceDictionary>

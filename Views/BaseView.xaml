@@ -11,67 +11,81 @@
         <vm:BaseViewModel/>
     </UserControl.DataContext>
     <StackPanel Margin="50,30">
-        <StackPanel>
+        <Border Style="{StaticResource section}">
+            <StackPanel>
             <TextBlock Text="Template String" Style="{StaticResource textBoxLabel--large}"/>
             <TextBox Style="{StaticResource textBox--large}"/>
         </StackPanel>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0">
-                <StackPanel>
-                    <TextBlock Text="Log Interval" Style="{StaticResource textBoxLabel}"/>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="4*"/>
-                            <ColumnDefinition Width="2*"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBox Grid.Column="0"  Style="{StaticResource textBox}"/>
-                        <ComboBox Grid.Column="1" Style="{DynamicResource ComboBoxInput}" ItemContainerStyle="{DynamicResource ComboBoxInputItem}">
-                            <ComboBoxItem>MS</ComboBoxItem>
-                            <ComboBoxItem>S</ComboBoxItem>
-                            <ComboBoxItem>M</ComboBoxItem>
-                            <ComboBoxItem>H</ComboBoxItem>
-                        </ComboBox>
-                    </Grid>
-                </StackPanel>
-                <StackPanel>
-                    <TextBlock Text="Log File Location" Style="{StaticResource textBoxLabel}"/>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="4*"/>
-                            <ColumnDefinition Width="2*"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBox Grid.Column="0" Style="{StaticResource textBox}" />
-                        <Button  Grid.Column="1" Content="Browse" Style="{StaticResource ButtonInput}"/>
-                    </Grid>
-                </StackPanel>
-                <StackPanel>
-                    <TextBlock Text="Log File Name" Style="{StaticResource textBoxLabel}"/>
-                    <TextBox Style="{StaticResource textBox}"/>
-                </StackPanel>
-            </StackPanel>
-            <StackPanel Grid.Column="1">
-                <StackPanel Orientation="Horizontal">
-                    <CheckBox/>
-                    <TextBlock Text="Clear file on Start"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <CheckBox/>
-                    <TextBlock Text="Vary Interval"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <CheckBox/>
-                    <TextBlock Text="Include Multiline Exceptions"/>
-                </StackPanel>
-            </StackPanel>
-            <StackPanel Grid.Column="2">
+        </Border>
+        <Border Style="{StaticResource section}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="0,0,5,0">
+                        <TextBlock Text="Log Interval" Style="{StaticResource textBoxLabel}"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Grid.Column="0"  Style="{StaticResource textBox}"/>
+                            <ComboBox Grid.Column="1" Style="{DynamicResource ComboBoxInput}" ItemContainerStyle="{DynamicResource ComboBoxInputItem}">
+                                <ComboBoxItem>MS</ComboBoxItem>
+                                <ComboBoxItem>S</ComboBoxItem>
+                                <ComboBoxItem>M</ComboBoxItem>
+                                <ComboBoxItem>H</ComboBoxItem>
+                            </ComboBox>
+                        </Grid>
+                    </StackPanel>
+                        <StackPanel Grid.Column="1" Margin="5,0,5,0">
+                        <TextBlock Text="Log File Location" Style="{StaticResource textBoxLabel}"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Grid.Column="0" Style="{StaticResource textBox}" />
+                            <Button  Grid.Column="1" Content="Browse" Style="{StaticResource ButtonInput}"/>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2" Margin="5,0,0,0">
+                            <TextBlock Text="Log File Name" Style="{StaticResource textBoxLabel}"/>
+                        <TextBox Style="{StaticResource textBox}"/>
+                    </StackPanel>
+                </Grid>
 
             </StackPanel>
         </Grid>
+        </Border>
+        <Border Style="{StaticResource section}">
+            <StackPanel>
+                <TextBlock Text="Settings" Style="{StaticResource textBoxLabel--large}"/>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox/>
+                        <TextBlock Text="Clear file on Start"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox/>
+                        <TextBlock Text="Vary Interval"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox/>
+                        <TextBlock Text="Include Multiline Exceptions"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </Border>
         <StackPanel>
             <Button Width="100" Height="40" Content="Save" HorizontalAlignment="Center" Command=""/>
         </StackPanel>
