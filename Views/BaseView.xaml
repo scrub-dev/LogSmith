@@ -10,7 +10,7 @@
     <UserControl.DataContext>
         <vm:BaseViewModel/>
     </UserControl.DataContext>
-    <StackPanel Margin="50,30">
+    <StackPanel Margin="50,30" VerticalAlignment="Center">
         <Border Style="{StaticResource section}">
             <StackPanel>
             <TextBlock Text="Template String" Style="{StaticResource textBoxLabel--large}"/>
@@ -86,9 +86,20 @@
                 </StackPanel>
             </StackPanel>
         </Border>
-        <StackPanel>
-            <Button Width="100" Height="40" Content="Save" HorizontalAlignment="Center" Command=""/>
-        </StackPanel>
+        <Border Style="{StaticResource section}">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type Button}">
+                        <Style.Setters>
+                            <Setter Property="Margin" Value="5"/>
+                        </Style.Setters>
+                    </Style>
+                </StackPanel.Resources>
+                <Button Width="100" Height="40" Content="Test" HorizontalAlignment="Center" Command="" Style="{StaticResource ButtonInput}"/>
+                <Button Width="100" Height="40" Content="Save" HorizontalAlignment="Center" Command="" Style="{StaticResource ButtonInput}"/>
+                <Button Width="100" Height="40" Content="Reset" HorizontalAlignment="Center" Command="" Style="{StaticResource ButtonInput}"/>
+            </StackPanel>
+        </Border>
     </StackPanel>
 
 </UserControl>
